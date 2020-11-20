@@ -1,15 +1,15 @@
 package com.mycom.puzzle.number.service;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
 import java.util.List;
-
-import junit.framework.Assert;
-
-import org.junit.Before;
-import org.junit.Test;
 
 import com.mycom.puzzle.number.domain.Dictionary;
 import com.mycom.puzzle.number.domain.NumberToWordMapper;
 import com.mycom.puzzle.number.domain.PhoneNumber;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class EncoderTest {
 
@@ -20,7 +20,7 @@ public class EncoderTest {
 
     private Encoder encoder;
 
-    @Before
+    @BeforeEach
     public void setUp() throws Exception {
         Dictionary dict = Dictionary.createDictionary(dictWords);
         NumberToWordMapper mapper = new NumberToWordMapper(dict);
@@ -85,10 +85,10 @@ public class EncoderTest {
     }
 
     private void assertValues(String[] expectedValue, List<String> words) {
-        Assert.assertNotNull(words);
-        Assert.assertEquals(expectedValue.length, words.size());
+        assertNotNull(words);
+        assertEquals(expectedValue.length, words.size());
         for (int i = 0; i < expectedValue.length; i++) {
-            Assert.assertEquals(expectedValue[i], words.get(i));
+            assertEquals(expectedValue[i], words.get(i));
         }
     }
 }

@@ -3,7 +3,7 @@ package com.mycom.puzzle.number.service;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class EncodeNumbersTest {
 

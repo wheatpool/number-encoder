@@ -1,11 +1,12 @@
 package com.mycom.puzzle.number.domain;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
 import java.util.List;
 
-import junit.framework.Assert;
-
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class NumberToWordMapperTest {
 
@@ -16,7 +17,7 @@ public class NumberToWordMapperTest {
 
     private NumberToWordMapper mapper;
 
-    @Before
+    @BeforeEach
     public void setUp() throws Exception {
         Dictionary dict = Dictionary.createDictionary(dictWords);
         mapper = new NumberToWordMapper(dict);
@@ -37,10 +38,10 @@ public class NumberToWordMapperTest {
     }
     
     private void assertValues(String[] expectedValue, List<Word> words) {
-        Assert.assertNotNull(words);
-        Assert.assertEquals(expectedValue.length, words.size());
+        assertNotNull(words);
+        assertEquals(expectedValue.length, words.size());
         for (int i = 0; i < expectedValue.length; i++) {
-            Assert.assertEquals(expectedValue[i], words.get(i).toString());
+            assertEquals(expectedValue[i], words.get(i).toString());
         }
     }
 }

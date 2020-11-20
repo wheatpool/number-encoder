@@ -1,10 +1,10 @@
 package com.mycom.puzzle.number.domain;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 import java.util.Iterator;
 
-import org.junit.Test;
-
-import junit.framework.Assert;
+import org.junit.jupiter.api.Test;
 
 public class DictionaryTest {
 
@@ -15,11 +15,11 @@ public class DictionaryTest {
 		
 		Iterator<Word> allWords = dict.getAllWords();
 		
-		Assert.assertNotNull(allWords);
-		Assert.assertTrue(allWords.hasNext());
-		Assert.assertNotNull(allWords.next());
-		Assert.assertTrue(allWords.hasNext());
-		Assert.assertNotNull(allWords.next());
-		Assert.assertFalse(allWords.hasNext());
+		assertNotNull(allWords);
+		assertTrue(allWords.hasNext());
+		assertNotNull(allWords.next());
+		assertTrue(allWords.hasNext());
+		assertNotNull(allWords.next());
+		assertFalse(allWords.hasNext());
 	}
 }

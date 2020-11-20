@@ -1,8 +1,8 @@
 package com.mycom.puzzle.number.domain;
 
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import junit.framework.Assert;
+import org.junit.jupiter.api.Test;
 
 public class WordTest {
 
@@ -10,7 +10,7 @@ public class WordTest {
 	public void testWord() {
 		String text = "word";
 		Word word = new Word(text);
-		Assert.assertEquals(text, word.toString());
+		assertEquals(text, word.toString());
 	}
 
     @Test
@@ -19,6 +19,6 @@ public class WordTest {
 		Word word = new Word(text);
 
 		String expectedResult = "word";
-		Assert.assertEquals(expectedResult, word.normalize());
+		assertEquals(expectedResult, word.normalize());
 	}
 }
